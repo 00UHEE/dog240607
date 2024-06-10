@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 유희정 - 시멘틱태그 - 레이아웃 - 370p- 24.06.07.금 </title>
+    <!-- 나눔고딕 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /*   * - 전체선택자  */
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            /* 앞에 글자체가 우선순위 */
+            background-color: #f0f0f0;
+        }
+
+
+
+        /* header - 배경색, 글씨색, 안쪽여백, 글씨정렬 */
+        header {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: #fff;
+
+            font-weight: bold;
+        }
+
+       a:hover {
+            text-decoration: underline;
+        }
+
+       nav ul {
+            display: flex;
+            gap: 100px;
+            /* header nav ul li {margin: 0 15px;} */
+            /* flex - 외부 여백 */
+            justify-content: center;
+            /* flex - 수평중앙정렬 */
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* 컨텐츠 영역 - section
+        상하좌우 안쪽여백20px, 상단하단 바깥여백20px+중앙정렬, 가로 사이즈 800 */
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            /* margin - 바깥여백 상하20, 좌우auto  */
+            padding: 20px;
+            /* padding - 안쪽여백 상하좌우 20 */
+            /* border: 1px solid red; */
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: #34495e;
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        section article {
+            /* 배경색, 둥근사각형, 그림자, 안쪽여백, 바깥 하단여백 */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* x,y,흐림,색+투명도*/
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        section article h3 {
+            font-size: 24px;
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        section article ul {
+            /* border: 1px solid red; */
+            display: flex;
+            /* width: 100%; */
+            justify-content: space-between;
+            /* justify-content: space-evenly; */
+            /* justify-content: space-around; */
+            flex-wrap: wrap;
+            /*  자동 다음줄 넘어감 */
+            gap: 10px;
+            /* 여백 10px */
+        }
+
+        article ul li {
+
+            list-style: none;
+            height: 250px;
+            flex: 1 1 calc(25% - 10px);
+            max-width: calc(25% - 10px);
+        }
+
+        article ul li img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /* 강아지 특징 - text */
+        section article div {
+            /* border:1px solid red; */
+            /* margin-top: 30px;
+            margin-bottom: 30px; */
+            margin: 30px 0 30px 0;
+            /* 상,오,하,왼 */
+        }
+
+        section article div p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ai 버튼 */
+        /* a - 인라인태그, 사이즈변경 불가능 */
+        section article div a.ai {
+            padding: 10px 20px;
+            background-color: #34495e;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        section article div a.ai:hover {
+            opacity: .7;
+            /* 70% 투명도*/
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        footer p a {
+            font-weight: bold;
+            color: #fff;
+        }
+
+
+        /*  tablet 구조 - 2단 */
+
+        @media (max-width: 1200px) {
+            article ul li {
+                flex: 1 1 calc(50% - 10px);
+                /* 2 columns */
+                max-width: calc(50% - 10px);
+                height: auto;
+            }
+        }
+
+        /*  mobile 구조 - 1단 */
+        @media (max-width:700px) {
+
+            /* block menu  */
+            nav ul {display: block; text-align: center;}
+            nav li {display: block;
+            margin: 15px 0; /* 상하 15px, 좌우 0 */ 
+            padding-bottom: 10px;
+            border-bottom: 1px dotted rgba(255,255,255,0.3); 
+            }
+
+            article ul li {
+                flex: 1 1 100%;
+                max-width: 100%;
+                height: auto;
+
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header - logo (h1) + menu (nav) -->
+    <header>
+        <!-- h1{애완견의 종류} -->
+        <!-- logo (h1)-->
+        <h1>애완견의 종류</h1>
+        <!-- menu (nav) -->
+        <!-- nav>ul>li*4>a{애완견의 종류} -->
+        <nav>
+            <ul>
+                <!-- <li><a href="https://www.naver.com">애완견의 종류</a></li> -->
+                <li><a href="#">애완견의 종류</a></li>
+                <li><a href="#">입양하기</a></li>
+                <li><a href="#">건강돌보기</a></li>
+                <li><a href="#">더블어살기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 컨텐츠 영역 -->
+    <!-- section>h2+article>h3+p -->
+    <section>
+        <h2>활달한 강아지</h2>
+        <article>
+            <h3>요크셔테리어 (Yorkshire Terrier)</h3>
+            <!-- 사진 -->
+            <!-- ul>li>a>img -->
+            <ul>
+                <li><a href="#"><img src="./images/1.jpg" alt="요크셔테리어1"></a></li>
+                <li><a href="#"><img src="./images/2.jpg" alt="요크셔테리어2"></a></li>
+                <li><a href="#"><img src="./images/3.jpg" alt="요크셔테리어3"></a></li>
+                <li><a href="#"><img src="./images/4.jpg" alt="요크셔테리어4"></a></li>
+            </ul>
+            <div>
+                <p>1. 작은 체구: 요크셔테리어는 작은 체구를 가지고 있지만, 에너지가 넘치고 매우 활발합니다.</p>
+                <p>2. 똑똑하고 호기심 많음: 이들은 매우 영리하며 호기심이 많아 새로운 것을 탐구하고 배우는 것을 좋아합니다.</p>
+                <p>3. 호위 본능: 자신의 가족을 보호하려는 강한 본능이 있으며, 낯선 사람이나 다른 동물에게 경계심을 보일 수 있습니다.</p>
+            </div>
+            <!-- AI버튼 -->
+            <div>
+                <a href="#" class="ai"> AI 감정읽기 </a>
+            </div>
+
+        </article>
+        <!-- <hr> -->
+        <article>
+            <h3>비숑 프리제 (Bichon Frise)</h3>
+            <ul>
+                <li><a href="#"><img src="./images/b1.jpg" alt="비숑 프리제1"></a></li>
+                <li><a href="#"><img src="./images/b2.jpg" alt="비숑 프리제2"></a></li>
+                <li><a href="#"><img src="./images/b3.jpg" alt="비숑 프리제3"></a></li>
+                <li><a href="#"><img src="./images/b4.jpg" alt="비숑 프리제4"></a></li>
+            </ul>
+            <div>
+                <p>1. 사회적이고 친근함: 비숑 프리제는 매우 사회적이고 사람들과의 교류를 즐깁니다. 낯선 사람에게도 친근하게 다가가는 성격입니다.</p>
+                <p>2. 항상 긍정적임: 이들은 밝고 긍정적인 성격을 가지고 있어, 항상 기분이 좋은 것처럼 보입니다.</p>
+                <p>3. 튼튼한 체력: 작은 체구에 비해 체력이 좋아서 많은 활동을 필요로 하고, 긴 산책이나 놀이 시간을 즐깁니다.</p>
+            </div>
+            <!-- AI버튼 -->
+            <div>
+                <a href="#" class="ai"> AI 감정읽기 </a>
+            </div>
+        </article>
+        <!-- <hr> -->
+        <article>
+            <h3>파피용 (Papillon)</h3>
+            <ul>
+                <li><a href="#"><img src="./images/p1.jpg" alt="파피용1"></a></li>
+                <li><a href="#"><img src="./images/p2.jpg" alt="파피용2"></a></li>
+                <li><a href="#"><img src="./images/p3.jpg" alt="파피용3"></a></li>
+                <li><a href="#"><img src="./images/p4.jpg" alt="파피용4"></a></li>
+            </ul>
+            <div>
+                <p>1. 우아한 외모: 파피용은 나비 모양의 귀 때문에 이름이 붙었으며, 우아한 외모를 자랑합니다.</p>
+                <p>2. 활발하고 민첩함: 매우 활발하고 민첩하며, 높은 지능으로 다양한 트릭과 명령을 쉽게 배웁니다.</p>
+                <p>3. 대담하고 자신감 넘침: 작은 크기에도 불구하고 대담하고 자신감 넘치는 성격을 가지고 있습니다. 다른 강아지나 사람들과의 상호작용을 즐깁니다.</p>
+            </div>
+            <!-- AI버튼 -->
+            <div>
+                <a href="#" class="ai"> AI 감정읽기 </a>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <!-- &copy;  엔티티기호  -->
+        <!-- &lt; &gt; ⓒ -->
+        <p>
+            &copy;
+            <a href="mailto:dogdreamlandj@dogdreamlandj.com">
+                Dog Dreamlandj Corp.</a>
+            All rights reserved.
+
+        </p>
+    </footer>
+</body>
+
+</html>
